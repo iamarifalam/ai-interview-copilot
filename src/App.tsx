@@ -7,7 +7,6 @@ import ChatBubble from './components/ChatBubble';
 import TypingDots from './components/TypingDots';
 import MicButton from './components/MicButton';
 import { useSpeech } from './utils/speech';
-import { lightTheme, darkTheme } from './styles/theme';
 
 const App = () => {
   const [input, setInput] = useState('');
@@ -37,6 +36,10 @@ const App = () => {
     setInput('');
     setLoading(true);
 
+    const apiKey =
+      process.env.REACT_APP_API_KEY ||
+      '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';
+
     try {
       const res = await axios.post(
         'https://openrouter.ai/api/v1/chat/completions',
@@ -49,7 +52,7 @@ const App = () => {
         },
         {
           headers: {
-            Authorization: 'Bearer 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',
+            Authorization: `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
           },
         }
