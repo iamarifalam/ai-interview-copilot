@@ -30,6 +30,7 @@ const App = () => {
 
   const handleSend = async () => {
     if (!input.trim()) return;
+
     const newChat = [...chat, { role: 'user', content: input }];
     setChat(newChat);
     setInput('');
@@ -49,8 +50,7 @@ const App = () => {
           headers: {
             Authorization: `Bearer ${process.env.REACT_APP_OPENROUTER_KEY}`,
             'Content-Type': 'application/json',
-}
-,
+          },
         }
       );
 
@@ -67,6 +67,7 @@ const App = () => {
   return (
     <div className={`${darkMode ? 'dark' : ''} min-h-screen transition-colors duration-500`}>
       <div className="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 min-h-screen font-sans">
+        {/* Navigation */}
         <nav className="backdrop-blur-md bg-white/70 dark:bg-gray-900/70 sticky top-0 z-50 shadow-sm border-b dark:border-gray-700 flex items-center justify-between px-6 py-4">
           <h1 className="text-2xl font-bold text-indigo-700 dark:text-white">Interview Copilot</h1>
           <div className="space-x-4 hidden md:flex">
@@ -88,6 +89,7 @@ const App = () => {
           </button>
         </nav>
 
+        {/* Chat UI */}
         <main id="copilot" className="p-6 md:p-12 space-y-6">
           <AnimatePresence>
             {chat.map((msg, i) => (
@@ -115,6 +117,7 @@ const App = () => {
           <div ref={bottomRef} />
         </main>
 
+        {/* Footer Input Area */}
         <footer className="px-6 py-6 bg-white/80 dark:bg-gray-900/80 border-t border-gray-300 dark:border-gray-700 backdrop-blur-md sticky bottom-0 z-40">
           <div className="max-w-3xl mx-auto flex items-end gap-4">
             <textarea
