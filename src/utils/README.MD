@@ -1,41 +1,39 @@
-# 🧠 AI Interview Copilot
 
-An AI-powered interview assistant built with React, TypeScript, Tailwind CSS, Framer Motion, and OpenRouter API.
-This tool helps candidates simulate interviews and practice responses in real time using voice and chat.
+# AI Interview Copilot
 
-## 🔗 Live Demo
+A voice-enabled AI interview assistant built with React, TypeScript, Tailwind, and OpenRouter.
 
-👉 [Visit App](https://ai-interview-copilot.vercel.app)
+Live: https://ai-interview-copilot-five.vercel.app
 
 ---
 
-## ⚙️ Tech Stack
+## What it does
 
-- ⚛️ React + TypeScript
-- 🎨 Tailwind CSS
-- 🎤 Web Speech API
-- 💬 OpenRouter (LLaMA-3)
-- ✨ Framer Motion (for animations)
-- 🧠 Lucide Icons
+Ask interview questions using your mic or keyboard.
+Get real-time AI-powered answers with a smooth chat UI.
+Dark mode, typing animation, and chat history included.
 
----
-
-## 🚀 Features
-
-- 🌗 Light/Dark mode toggle
-- 🎙️ Voice input with mic animation
-- ✍️ Typing bubble animations
-- 💬 Chat persistence (localStorage)
-- 📱 Fully responsive UI
+Built as a personal tool to simulate interviews and prepare better.
 
 ---
 
-## 🛠️ Setup Locally
+## Tech stack
+
+- React (with TypeScript)
+- TailwindCSS
+- Framer Motion
+- Lucide Icons
+- OpenRouter API (LLaMA 3 model)
+- Web Speech API for voice input
+- Vercel (for hosting)
+
+---
+
+## How to run locally
+
+1. Clone the repo
 
 ```bash
 git clone https://github.com/iamarifalam/ai-interview-copilot.git
 cd ai-interview-copilot
-npm install
-cp .env.example .env    # Add your OpenRouter key in the .env
-npm start
 ```

@@ -28,11 +28,6 @@ const App = () => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chat]);
 
-  const apiKey =
-    process.env.REACT_APP_API_KEY || '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';
-
-  console.log('🔐 DEBUG: Using API Key →', apiKey);
-
   const handleSend = async () => {
     if (!input.trim()) return;
     const newChat = [...chat, { role: 'user', content: input }];
@@ -52,7 +47,7 @@ const App = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${apiKey}`,
+            Authorization: 'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
