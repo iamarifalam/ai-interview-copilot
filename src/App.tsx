@@ -47,9 +47,10 @@ const App = () => {
         },
         {
           headers: {
-            Authorization: 'Bearer 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',
+            Authorization: `Bearer ${process.env.REACT_APP_OPENROUTER_KEY}`,
             'Content-Type': 'application/json',
-          },
+}
+,
         }
       );
 
